@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D</title>
+	<style type="text/css">
+	*{
+		margin: 0;padding: 0;
+	}
+	.box{
+		width: 200px;height: 200px;
+		margin: 100px auto;
+		/*border: 1px solid red;*/
+		font-size: 50px;color: #fff;font-weight: bold;
+		text-align: center;line-height: 200px;opacity: 1;
+		position: relative;
+		/*建立3D空间*/
+		transform-style: preserve-3d;
+		 /*视角基点（从哪个点进行观看）*/
+		perspective-origin: -200% 200%;
+		/*景深*/
+		perspective:0px;
+		/*属性定义当元素不面向屏幕时是否可见*/
+		/*backface-visibility:hidden;*/
+		/*transition: 6s;*/
+	
+		/*动画名称*/
+		animation-name: mov;
+		/*重复次数 参数n|| infinite(一直)*/
+		animation-iteration-count: infinite;
+		/*动画持续时间*/
+		animation-duration: 6s;
+		/*动画延迟（只是第一次）*/
+		/*animation-delay: 0s;	*/
+		/*动画运动方式 linear:匀速;ease:缓冲;ease-in-out:慢-快-慢;cubic-bezier(number,number, number, number):贝塞尔曲线,4个数[0, 1]*/
+		animation-timing-function: linear;
+	}
+	.box div{
+		width: 200px;height: 200px;
+		position: absolute;left: 0;top: 0;
+	}
+	.d1{/*前*/
+		background-color: orange;
+		transform: translateZ(100px);
+	}
+	.d2{/*左*/
+		background-color: pink;
+		transform: translateX(-100px) rotateY(-90deg);
+	}
+	.d3{/*后*/
+		background-color: purple;
+		transform: translateZ(-100px) rotateY(-180deg)
+	}
+	.d4{/*右*/
+		background-color: yellow;
+		transform: translateX(100px) rotateY(90deg);
+	}
+	.d5{/*上*/
+		background-color: red;
+		transform: translateY(-100px) rotateX(90deg);
+	}
+	.d6{/*下*/
+		background-color: blue;
+		transform: translateY(100px) rotateX(-90deg);
+	}
+	@keyframes mov{
+		from{
+			transform: rotateY(0deg) rotateX(0deg);
+		}
+		to{
+			transform: rotateY(360deg) rotateX(360deg);
+		}
+	}
+<body>
+	</style>
+</head>
+	<div class="box">
+		<div class="d1">第1面</div>
+		<div class="d2">第2面</div>
+		<div class="d3">第3面</div>
+		<div class="d4">第4面</div>
+		<div class="d5">第5面</div>
+		<div class="d6">第6面</div>
+	</div>
+</body>
+</html>

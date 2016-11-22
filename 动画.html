@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动画</title>
+	<style type="text/css">
+	.d1{
+		width: 200px;
+		height: 200px;
+		background-color: purple;
+		margin: 100px auto;
+
+		/*动画名称*/
+		animation-name: change;
+		/*动画持续时间*/
+		animation-duration: 5s;
+		/*动画运动方式 linear:匀速;ease:缓冲;ease-in-out:慢-快-慢;cubic-bezier(number,number, number, number):贝塞尔曲线,4个数[0, 1]*/
+		animation-timing-function: ease;
+		/*动画延迟（只是第一次）*/
+		animation-delay: 1s;
+		/*重复次数 参数n|| infinite(一直)*/
+		animation-iteration-count: infinite;
+		/*alternate:从上次停止的位置开始;normal:动画第二次直接跳到0%的状态开始*/
+		animation-direction: alternate;
+		/*播放状态(running播放;paused暂停)*/
+		animation-play-state: running;
+		/*规定对象动画时间之外的状态。none：不改变默认行为。forwards：动画执行完毕保持最后一个属性值,backwards：动画执行之前 保持开始状态,,both：forwords和backwords都保持*/
+		animation-fill-mode: both;
+		/*简写*/
+		/*animation: change 5s ease 1s infinite alternate;*/
+	}
+	@keyframes change{
+		from{
+			width: 200px;
+			background-color: green;
+		}
+		50%{
+			width: 400px;
+			background-color: yellow;
+		}
+		80%{
+			width: 600px;
+			background-color: black;
+		}
+
+		to{
+			height: 400px;
+			background-color: blue;
+		}
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="d1"></div>
+	</div>
+</body>
+</html>

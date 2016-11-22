@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播</title>
+	<style type="text/css">
+	*{margin: 0;
+		padding: 0;
+	}
+	.box{
+		width: 520px;
+		height: 280px;
+		border: 1px solid gray;
+		margin: 100px auto;
+		position: relative;
+		overflow: hidden;
+		/*transition: all 15s linear;*/
+	}
+	.wrap{
+		width: 500%;
+		height: 280px;
+		position: absolute;
+		left: 0;
+		animation: mov 5s linear infinite ;
+	}
+	img{
+		width: 520px;
+		height: 280px;
+		float: left;
+	}
+	.wrap:hover{
+		
+		}
+	@-webkit-keyframes mov{
+		0%{left:0;}
+		100%{left: -2080px;}	
+	}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="wrap">
+			<img src="images/luobo/1.jpg" alt="">
+			<img src="images/luobo/2.jpg" alt="">
+			<img src="images/luobo/3.jpg" alt="">
+			<img src="images/luobo/4.jpg" alt="">
+			<img src="images/luobo/5.jpg" alt="">
+		</div>
+	</div>
+	<script type="text/javascript">
+		
+	</script>
+</body>
+</html>
